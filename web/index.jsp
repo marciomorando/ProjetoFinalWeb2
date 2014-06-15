@@ -39,12 +39,25 @@
             </tr>
             <tr>
                 <td></td>
-                <td align="center"><a href="informaCliente.jsp">Cadastro de Chamado</a></td>
+                <td align="center"><a href="cadastraChamado.jsp">Cadastro de Chamado</a></td>
             </tr>
             <tr>
                 <td></td>
-                <td align="center"><a href="mostraDados.jsp">Listar Chamados</a></td>
-            </tr>    
+                <td align="center"><a href="mostraChamados.jsp">Listar Chamados</a></td>
+            </tr>  
+             <tr>
+                <td></td>
+                <td align="center"><a href="cadastraUsuario.jsp">Cadastrar Usuário</a></td>
+            </tr>  
+             <tr>
+                <td></td>
+                <td align="center"><a href="cadastraAtendente.jsp">Cadastrar Atendente</a></td>
+            </tr>
+             <tr>
+                <td></td>
+                <td align="center"><a href="cadastraDepartamento.jsp">Cadastrar Departamento</a></td>
+            </tr>
+            
         </table>
     </body>
 </html>
