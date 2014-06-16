@@ -43,7 +43,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td align="center"><a href="mostraChamados.jsp">Listar Chamados</a></td>
+                <td align="center"><a href="mostraChamados1.jsp">Listar Chamados</a></td>
             </tr>  
              <tr>
                 <td></td>

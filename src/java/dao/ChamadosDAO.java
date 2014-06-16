@@ -44,21 +44,73 @@ public class ChamadosDAO {
             }
     }
     
+     public String ordem = null;
+     public String order = null;
+     public String titulo_busca = null;
+     public String atendente_busca = null;
+    
     public List<Chamados> getChamadoss() {
         List<Chamados> lista = new ArrayList<Chamados>();
+        
+           if(ordem == null && order == null){
+            ordem = "id_chamados";
+            order = "DESC";
+        }
         
         Conecta c = new Conecta();
 
             if ("sucesso".equals(c.getMsg())) {
 
                 // Vamos preparar o comando SQL:
-                String sql = "select id_chamados,chamados.titulo,chamados.descricao,tipochamado.descricao,classificacao.descricao,\n" +
-                             "atendente.nome as atendente, usuario.nome as usuario\n" +
-                             "from mydb.chamados\n" +
+   String sql = "select id_chamados,\n" +
+"chamados.titulo,\n" +
+"chamados.descricao as ch,\n" +
+"tipochamado.id_tipochamado,\n" +
+"tipochamado.descricao as t,\n" +
+"classificacao.id_classificacao,\n" +
+"classificacao.descricao as b,\n" +
+"atendente.id_atendente,\n" +
+"atendente.nome as atendentenome, \n" +
+"usuario.id_usuario,\n" +
+"usuario.nome as usuario\n" +
+"                from mydb.chamados\n" +
+"                inner join tipochamado on chamados.tipochamado_id_tipochamado = tipochamado.id_tipochamado\n" +
+"                inner join classificacao on chamados.classificacao_id_classificacao = classificacao.id_classificacao \n" +
+"                inner join atendente on chamados.atendente_id_atendente = atendente.id_atendente\n" +
+"                inner join usuario on chamados.usuario_id_usuario = usuario.id_usuario order by "+ordem+" "+order ;
+           
+                 if(titulo_busca != null || atendente_busca != null){
+                     sql = "select id_chamados,\n" +
+"chamados.titulo,\n" +
+"chamados.descricao as ch,\n" +
+"tipochamado.id_tipochamado,\n" +
+"tipochamado.descricao as t,\n" +
+"classificacao.id_classificacao,\n" +
+"classificacao.descricao as b,\n" +
+"atendente.id_atendente,\n" +
+"atendente.nome as atendentenome, \n" +
+"usuario.id_usuario,\n" +
+"usuario.nome as usuario\n" +
+"                from mydb.chamados\n" +
+"                inner join tipochamado on chamados.tipochamado_id_tipochamado = tipochamado.id_tipochamado\n" +
+"                inner join classificacao on chamados.classificacao_id_classificacao = classificacao.id_classificacao \n" +
+"                inner join atendente on chamados.atendente_id_atendente = atendente.id_atendente\n" +
+"                inner join usuario on chamados.usuario_id_usuario = usuario.id_usuario where chamados.titulo like '%"+titulo_busca+"%' ORDER BY "+ordem+" "+order ;
+                 }   
+
+//"select * from mydb.chamados order by "+ordem+" "+order ;
+                //if(titulo_busca != null || atendente_busca != null){
+                 //   sql = "select * from mydb.chamados where titulo like '%"+titulo_busca+"%'  ORDER BY "+ordem+" "+order ; 
+               // }
+ 
+   /*"select id_chamados,chamados.titulo,chamados.descricao,tipochamado.descricao,classificacao.descricao,\n" +
+ 
+   "atendente.nome as atendente, usuario.nome as usuario\n" +
+                "from mydb.chamados\n" +
                 "inner join tipochamado on chamados.tipochamado_id_tipochamado = tipochamado.id_tipochamado\n" +
                 "inner join classificacao on chamados.classificacao_id_classificacao = classificacao.id_classificacao \n" +
                 "inner join atendente on chamados.atendente_id_atendente = atendente.id_atendente\n" +
-                "inner join usuario on chamados.usuario_id_usuario = usuario.id_usuario";
+                "inner join usuario on chamados.usuario_id_usuario = usuario.id_usuario";*/
                 // Definido o Statement, executamos o comando no banco de dados.
                 ResultSet rs;
                     
@@ -71,36 +123,36 @@ public class ChamadosDAO {
                     // caso existir resultados, percorremos a lista.
                     while (rs.next()) {
                         //leitura dos campos da tabela em vari�veis
-                        int cod = rs.getInt("id_chamado");
+                        int cod = rs.getInt("id_chamados");
                         String titulo = rs.getString("titulo");
-                        String descricao = rs.getString("descricao");
+                        String descricao = rs.getString("ch");
                         
-                        int codtipoChamado = rs.getInt("tipochamado_id_tipochamado");
+                        int codtipoChamado = rs.getInt("id_tipochamado");
                         tipoChamado tc = new tipoChamado();
                         tc.setId_tipochamado(codtipoChamado);
                         
-                        String descricaotipoChamado = rs.getString("descricao");
+                        String descricaotipoChamado = rs.getString("t");
                         tc.setDescricao(descricaotipoChamado);
                         
-                        int codClassificacao = rs.getInt("classificacao_id_classificacao");
+                        int codClassificacao = rs.getInt("id_classificacao");
                         Classificacao cl = new Classificacao();
                         cl.setId_classificacao(codClassificacao);
                         
-                        String descricaoClassificacao = rs.getString("descricao");
+                        String descricaoClassificacao = rs.getString("b");
                         cl.setDescricao(descricaoClassificacao);
                         
-                        int codAtendente = rs.getInt("atendente_id_atendente");
+                        int codAtendente = rs.getInt("id_atendente");
                         Atendente at = new Atendente();
                         at.setId_atendente(codAtendente);
                         
-                        String nomeAtendente = rs.getString("nome");
+                        String nomeAtendente = rs.getString("atendentenome");
                         at.setNome(nomeAtendente);
                         
-                        int CodUsuario = rs.getInt("usuario_id_usuario");
+                        int CodUsuario = rs.getInt("id_usuario");
                         Usuario usu = new Usuario();
                         usu.setId_usuario(CodUsuario);
                         
-                        String nomeUsuario = rs.getString("nome");
+                        String nomeUsuario = rs.getString("usuario");
                         usu.setNome(nomeUsuario);
                         
                         Chamados ch = new Chamados(cod,titulo,descricao,tc,cl,at,usu);

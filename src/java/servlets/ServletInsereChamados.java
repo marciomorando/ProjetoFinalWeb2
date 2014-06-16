@@ -80,7 +80,7 @@ public class ServletInsereChamados extends HttpServlet {
             String msg = cliDao.addChamados(ch);
             if (msg.equals("sucesso")) {
                 //out.println("Inserido Usuario"+usu.getNome());
-                //response.sendRedirect("mostraDados.jsp?nomeIncluido="+cli.getNome_pessoa());
+                response.sendRedirect("mostraChamados1.jsp?Chamado Incluido="+ch.getId_chamados());
             } else {
                 out.println("Erro: "+msg);
             }

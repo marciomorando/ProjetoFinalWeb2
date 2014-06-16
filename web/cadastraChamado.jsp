@@ -14,6 +14,7 @@
 <%@page import="dao.tipoChamadoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<link rel="stylesheet" href="css/bootstrap.css">
 <html>
       <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
