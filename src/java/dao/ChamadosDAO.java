@@ -95,7 +95,7 @@ public class ChamadosDAO {
 "                inner join tipochamado on chamados.tipochamado_id_tipochamado = tipochamado.id_tipochamado\n" +
 "                inner join classificacao on chamados.classificacao_id_classificacao = classificacao.id_classificacao \n" +
 "                inner join atendente on chamados.atendente_id_atendente = atendente.id_atendente\n" +
-"                inner join usuario on chamados.usuario_id_usuario = usuario.id_usuario where chamados.titulo like '%"+titulo_busca+"%' ORDER BY "+ordem+" "+order ;
+"                inner join usuario on chamados.usuario_id_usuario = usuario.id_usuario where chamados.titulo like '%"+titulo_busca+"%' and atendente.nome like '%"+atendente_busca+"%'  ORDER BY "+ordem+" "+order ;
                  }   
 
 //"select * from mydb.chamados order by "+ordem+" "+order ;

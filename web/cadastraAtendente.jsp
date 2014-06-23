@@ -21,7 +21,7 @@
         <form name="resultadoForm" action="ServletInsereAtendente" method="POST">
             
             <label for="nome">Nome:</label><br />
-            <input type="text" name="nome" id="nome" value="" size="60" /><br />
+            <input type="text" name="nome" id="nome" value="" size="60" required/><br />
           
             <br />
         

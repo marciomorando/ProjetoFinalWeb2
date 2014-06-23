@@ -21,12 +21,12 @@
         <form name="resultadoForm" action="ServletInsereDepartamento" method="POST">
             
             <label for="nome">Nome:</label><br />
-            <input type="text" name="nome" id="nome" value="" size="60" /><br />
+            <input type="text" name="nome" id="nome" value="" size="60" required/><br />
           
             <br />
             
             <label for="nome">Descrição:</label><br />
-            <input type="text" name="descricao" id="descricao" value="" size="60" /><br />
+            <input type="text" name="descricao" id="descricao" value="" size="60" required/><br />
           
             <br />
             

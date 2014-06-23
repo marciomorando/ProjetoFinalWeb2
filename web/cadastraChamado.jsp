@@ -14,7 +14,9 @@
 <%@page import="dao.tipoChamadoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <link rel="stylesheet" href="css/bootstrap.css">
+
 <html>
       <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -29,14 +31,14 @@
         <form name="resultadoForm" action="ServletInsereChamados" method="POST">
             
             <label for="nome">Titulo:</label><br />
-            <input type="text" name="titulo" id="titulo" value="" size="60" /><br />
+            <input type="text" name="titulo" id="titulo" value="" size="60" required/><br />
           
-            <br />
+           
             
             <label for="nome">Descricao:</label><br />
-            <input type="text" name="descricao" id="descricao" value="" size="60" /><br />
+            <input type="text" name="descricao" id="descricao" value="" size="60" required/><br />
           
-            <br />
+            
             
             <label for="nome">Tipo do Chamado:</label><br />
             <select name="tipochamado">
@@ -48,7 +50,7 @@
                 %>
             </select>
 
-            <br /><br /><br />
+            <br /><br />
             
             <label for="nome">Classificacao:</label><br />
             <select name="classificacao">
@@ -59,7 +61,7 @@
                 }
                 %>
             </select>
-            <br /><br /><br />
+            <br /><br />
             
             
             <label for="nome">Atendente:</label><br />
@@ -71,7 +73,7 @@
                 }
                 %>
             </select>
-            <br /><br /><br />
+            <br /><br />
       
             <label for="nome">Usuario:</label><br />
             <select name="usuario">
@@ -82,7 +84,7 @@
                 }
                 %>
             </select>
-            <br /><br /><br />
+            <br /><br />
             
             <input type="submit" value="Incluir >>" name="btServlet" id="btServlet" />
         </form>

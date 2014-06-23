@@ -109,7 +109,7 @@
                         
                        
                     </tr>
-                    <tr>
+                    <%--    <tr>
                         <td><hr></td>
                         <td><hr></td>
                         <td><hr></td>
@@ -121,7 +121,7 @@
                         <td><hr></td>
                         <td><hr></td>
                         <td><hr></td>
-                    </tr>
+                    </tr> --%>
                 <% 
                 }                
                 %>

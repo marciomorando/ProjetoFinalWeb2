@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index2
-    Created on : 21/06/2014, 20:38:08
+    Document   : index
+    Created on : 02/06/2014, 19:52:52
     Author     : MarcioMorando
 --%>
 
@@ -20,9 +20,9 @@
         </style>
         <table align="center" style="text-align:center;">
             <tr>
-                <td>      
-                    <img src="unoesc.png" width="125" height="89">       
-                </td>       
+                <td>       
+                    <img src="unoesc.png" width="125" height="89">        
+                </td>        
                 <td style="text-align: center">
                     UNIVERSIDADE DO OESTE DE SANTA CATARINA<br>
                     CURSO: ENGENHARIA DA COMPUTAÇÃO<br>
@@ -31,25 +31,34 @@
                     TRABALHO FINAL<br>
                     <b>Márcio Morando</b>
                 </td>
-               
+                
             </tr>
             <tr>
                 <td></td>
-                <td align="center" style="font-size:20px"><strong><br /><br /><br />GERENCIADOR DE CHAMADOS</strong></td>
+                <td style="font-size:20px"><strong><br /><br /><br />GERENCIADOR DE CHAMADOS</strong></td>
             </tr>
-     
+            <tr>
+                <td></td>
+                <td align="center"><a href="cadastraChamado.jsp">Cadastro de Chamado</a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td align="center"><a href="mostraChamados1.jsp">Listar Chamados</a></td>
+            </tr>  
+             <tr>
+                <td></td>
+                <td align="center"><a href="cadastraUsuario.jsp">Cadastrar Usuário</a></td>
+            </tr>  
+             <tr>
+                <td></td>
+                <td align="center"><a href="cadastraAtendente.jsp">Cadastrar Atendente</a></td>
+            </tr>
+             <tr>
+                <td></td>
+                <td align="center"><a href="cadastraDepartamento.jsp">Cadastrar Departamento</a></td>
+            </tr>
+            
         </table>
-       
-        
-        
-                   <ul class="nav nav-pills nav-stacked">
-  <li align="center" class="active"> <a href="index2.jsp">Home</a></li>
-  <li align="center" ><a href="cadastraAtendente.jsp">Cadastrar Atendente</a></li>
-  <li align="center" ><a href="cadastraChamado.jsp">Cadastrar Chamado</a></li>
-  <li align="center" ><a href="cadastraDepartamento.jsp">Cadastrar Departamento</a></li>
-  <li align="center" ><a href="cadastraUsuario.jsp">Cadastrar Usuário</a></li>
-  <li align="center" ><a href="mostraChamados1.jsp">Listar Chamados</a></li>
-                  </ul>
- 
     </body>
 </html>
+
